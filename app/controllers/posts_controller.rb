@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
@@ -15,6 +18,9 @@ class PostsController < ApplicationController
   end
 
   def update
+  end
+
+  def destroy
   end
 
   private

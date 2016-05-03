@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'coffee-script-source', '~> 1.8.0'
 gem 'better_errors'
 gem 'paperclip'
+gem 'simple_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
