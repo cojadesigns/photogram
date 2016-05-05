@@ -18,6 +18,8 @@ gem 'better_errors'
 gem 'paperclip'
 gem 'simple_form'
 gem 'haml'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

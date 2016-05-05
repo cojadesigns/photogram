@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
+    @posts = Post.all.order('created_at DESC')
   end
 
   def new
@@ -12,8 +13,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post
+      flash.now[:success] = "Your post has been created!"
+      redirect_to posts_path
     else
+      flash.now[:alert] = "Your new post couldn't be created!  Please check the form."
       render 'new'
     end
   end
@@ -25,9 +28,24 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(post_params)
+      flash.now[:alert] = "Post updated successfully!"
+      redirect_to @post
+    else
+      flash.now[:alert] = "Update failed.  Please check the form."
+      render 'edit'
+    end
   end
 
   def destroy
+    if @post.destroy
+      flash.now[:success] = "Post deleted successfully"
+
+      redirect_to posts_path
+    else
+      flash.now[:alert] = "Something went wrong, please check the form."
+      render 'edit'
+    end
   end
 
   private
