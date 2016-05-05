@@ -1,2 +1,11 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+.posts-wrapper.row
+  .post
+    .post-head
+      .name
+        Ben Walker
+    .image.center-block
+      =image_tag @post.image.url(:medium)
+    %p.caption
+      =@post.caption
+    .text-center
+      =link_to "Cancel", posts_path
