@@ -19,6 +19,7 @@
 body {  
   background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  padding-top: 70px;
 }
 
 /* ## NAVBAR CUSTOMISATIONS ## */
@@ -126,6 +127,7 @@ body {
   border: medium none;
   width: 100%;
   color: #4B4F54;
+  outline: none;
 }
 
 .comment-like-form {
